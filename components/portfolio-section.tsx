@@ -53,7 +53,7 @@ const projects = [
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-20 px-15 bg-background">
+    <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-15 bg-background relative">
       <Reveal>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -105,30 +105,31 @@ export function PortfolioSection() {
               </div>
             </Reveal>
           </div>
-          <div className="flex justify-center gap-6 mt-8">
-            {/* Solid Blue Button */}
-            <a href="/portfolio">
-              <Button
-                className="rounded-full px-12 py-5 text-lg font-semibold text-white bg-blue-600 shadow-md
-                          transition-all duration-300 ease-in-out
-                          hover:bg-[#ff914d] hover:scale-105 hover:shadow-lg"
-              >
-                Explore All Portfolio
-              </Button>
-            </a>
+           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-8">
+              {/* Solid Blue Button */}
+              <a href="/portfolio" className="w-full sm:w-auto">
+                <Button
+                  className="w-full sm:w-auto rounded-full px-12 py-5 text-lg font-semibold text-white bg-blue-600 shadow-md
+                            transition-all duration-300 ease-in-out
+                            hover:bg-[#ff914d] hover:scale-105 hover:shadow-lg"
+                >
+                  Explore All Portfolio
+                </Button>
+              </a>
 
-            {/* Outline Blue Button */}
-            <a href="/contact">
-              <Button
-                variant="outline"
-                className="rounded-full px-12 py-5 text-lg font-semibold text-blue-600 border-2 border-blue-600 bg-transparent shadow-md
-                          transition-all duration-300 ease-in-out
-                          hover:bg-[#ff914d] hover:border-[#ff914d] hover:text-white hover:scale-105 hover:shadow-lg"
-              >
-                Discuss Your Project
-              </Button>
-            </a>
-          </div>
+              {/* Outline Blue Button */}
+              <a href="/contact" className="w-full sm:w-auto">
+                <Button
+                  variant="outline"
+                  className="w-full sm:w-auto rounded-full px-12 py-5 text-lg font-semibold text-blue-600 border-2 border-blue-600 bg-transparent shadow-md
+                            transition-all duration-300 ease-in-out
+                            hover:bg-[#ff914d] hover:border-[#ff914d] hover:text-white hover:scale-105 hover:shadow-lg"
+                >
+                  Discuss Your Project
+                </Button>
+              </a>
+           </div>
+
 
 
 
