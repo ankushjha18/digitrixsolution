@@ -26,7 +26,9 @@ export function Header() {
     { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
     { name: "Portfolio", href: "/portfolio" },
+    { name: "Pricing", href: "/contact" },
     { name: "Contact", href: "/contact" },
+    
   ]
 
   return (
@@ -77,17 +79,29 @@ export function Header() {
               ))}
             </ul>
           </nav>
-
-          <div className="hidden md:block">
+{/* get stared button */}
+            <div className="hidden md:block px-8">
               <Button
-                  className={`group hover:scale-105 transition-all duration-300 hover:shadow-lg bg-[#723fa3] text-white hover:bg-[#ff914d] `}
-                >
-                  <span className="group-hover:scale-110 transition-transform duration-300">
-                    Get Started
-                  </span>
+                className="group rounded-full px-8 py-3 bg-[#723fa3] text-white font-semibold
+                          hover:bg-[#ff914d] hover:shadow-lg transition-all duration-300"
+              >
+                <span className="flex space-x-0.5">
+                  {"Get   Started".split("").map((char, i) => (
+                    <span
+                      key={i}
+                      className="inline-block transform transition-transform duration-300
+                                group-hover:-translate-y-1 group-hover:delay-[calc(var(--i)*50ms)]"
+                      style={{ "--i": i } as React.CSSProperties}
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
               </Button>
+            </div>
 
-          </div>
+
+
 
           {/* Mobile menu button */}
           

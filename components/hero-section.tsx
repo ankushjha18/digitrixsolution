@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Play, Sparkles } from "lucide-react"
 import { useEffect, useState } from "react"
 import GlobeBackground from "@/components/ui/earth-globe"
+import Link from "next/link"
 
 
 export function HeroSection() {
@@ -81,6 +82,7 @@ export function HeroSection() {
               Start Your Project
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
+            <Link href="/portfolio" passHref>
             <Button
               variant="outline"
               size="lg"
@@ -89,6 +91,7 @@ export function HeroSection() {
               <Play className="mr-2 h-5 w-5" />
               Watch Our Work
             </Button>
+            </Link>
           </div>
         </div>
       </div>
