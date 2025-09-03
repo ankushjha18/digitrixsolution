@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import { Play } from "lucide-react"
+import Reveal from "./anim/Reveal"
 
 const items = [
   { src: "/modern-web-development.png", alt: "Modern web development" },
@@ -17,6 +18,7 @@ export function VideoStrip() {
   const track = [...items, ...items]
   return (
     <section aria-label="Showreel" className="relative py-6">
+      <Reveal>
       <div className="marquee group overflow-hidden">
         <div className="marquee-track flex gap-4 pr-4">
           {track.map((it, i) => (
@@ -35,6 +37,7 @@ export function VideoStrip() {
           ))}
         </div>
       </div>
+      </Reveal>
     </section>
   )
 }

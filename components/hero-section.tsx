@@ -5,6 +5,7 @@ import { ArrowRight, Play, Sparkles } from "lucide-react"
 import { useEffect, useState } from "react"
 import GlobeBackground from "@/components/ui/earth-globe"
 import Link from "next/link"
+import PopupForm from "./popup_form"
 
 
 export function HeroSection() {
@@ -75,6 +76,8 @@ export function HeroSection() {
                 : "opacity-0 translate-y-8"
             }`}
           >
+            <PopupForm
+            trigger = {
             <Button
               size="lg"
               className="text-lg px-8 py-3 group hover:scale-105 transition-all duration-300"
@@ -82,6 +85,9 @@ export function HeroSection() {
               Start Your Project
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
+            }
+            />
+          
             <Link href="/portfolio" passHref>
             <Button
               variant="outline"
