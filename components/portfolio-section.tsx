@@ -28,27 +28,7 @@ const projects = [
     tags: ["React Native", "Node.js", "MongoDB", "Security"],
     category: "Mobile Development",
   },
-  {
-    title: "Restaurant Chain Website",
-    description: "Multi-location restaurant website with online ordering and reservation system.",
-    image: "/restaurant-website-with-online-ordering.png",
-    tags: ["WordPress", "WooCommerce", "Local SEO", "Responsive"],
-    category: "Web Development",
-  },
-  {
-    title: "Tech Startup Branding",
-    description: "Complete brand identity and digital presence for an AI startup company.",
-    image: "/tech-startup-branding-and-website.png",
-    tags: ["Branding", "UI/UX", "React", "Brand Strategy"],
-    category: "Design & Branding",
-  },
-  {
-    title: "Healthcare Platform",
-    description: "HIPAA-compliant telemedicine platform connecting patients with healthcare providers.",
-    image: "/telemedicine-healthcare-platform-interface.png",
-    tags: ["Vue.js", "HIPAA", "WebRTC", "Security"],
-    category: "Web Development",
-  },
+  
 ]
 
 export function PortfolioSection() {
@@ -91,7 +71,7 @@ export function PortfolioSection() {
                         ))}
                       </div>
                       <div className="flex gap-2">
-                        <Button size="sm" variant="outline" className="flex-1 bg-[#ff914d] hover:bg-[#723fa3]" >
+                        <Button size="sm" variant="outline" className="flex-1 text-white bg-[#723fa3] hover:bg-[#ff914d]" >
                           <ExternalLink className="h-4 w-4 mr-2" />
                           View Live
                         </Button>

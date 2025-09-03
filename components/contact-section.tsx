@@ -1,7 +1,59 @@
 "use client"
 
+
 import type React from "react"
 
+import { Mail } from "lucide-react"
+
+export function ConsultancySection() {
+  return (
+    <section className="w-full py-12 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 pl-4 sm:pl-8 md:pl-16">
+        
+        {/* Left Side */}
+        <div className="text-center md:text-left">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
+          Need a{" "}
+          <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Consultancy
+          </span>?
+        </h2>
+          <p className="text-base sm:text-lg text-muted-foreground mt-2">
+            We are here for you — let’s discuss your project.
+          </p>
+        </div>
+
+        {/* Right Side (Rounded Contact Button) */}
+        <a
+          href="/contact"
+          className="group inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-blue-600 text-blue-600 font-semibold text-base sm:text-lg shadow-md transition-all duration-300 ease-in-out hover:text-orange-500 hover:border-orange-500 w-full md:w-auto custom-vibrate"
+        >
+          <Mail className="h-5 w-5 sm:h-6 sm:w-6 transition-colors duration-300 group-hover:text-orange-500" />
+          Contact Us
+        </a>
+      </div>
+
+      {/* Vibration Animation */}
+      <style jsx>{`
+        @keyframes vibrate {
+          0% { transform: translateX(0); }
+          20% { transform: translateX(-2px); }
+          40% { transform: translateX(2px); }
+          60% { transform: translateX(-2px); }
+          80% { transform: translateX(2px); }
+          100% { transform: translateX(0); }
+        }
+        .custom-vibrate:hover {
+          animation: vibrate 0.3s linear infinite;
+        }
+      `}</style>
+    </section>
+  )
+}
+
+
+
+{/*}
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -43,7 +95,7 @@ export function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Information */}
+          {/* Contact Information }
           <div className="space-y-6">
             <Card>
               <CardContent className="p-6">
@@ -92,7 +144,7 @@ export function ContactSection() {
             </Card>
           </div>
 
-          {/* Contact Form */}
+          {/* Contact Form }
           <div className="lg:col-span-2">
             <Card>
               <CardHeader>
@@ -172,3 +224,4 @@ export function ContactSection() {
     </section>
   )
 }
+{*/}
