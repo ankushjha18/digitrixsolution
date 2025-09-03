@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Shield, Users, Headphones, Globe2, TrendingUp } from "lucide-react"
+import { useEffect, useState } from "react"
 
 const features = [
   {
@@ -42,6 +43,16 @@ const features = [
 ]
 
 export default function WhyChooseUs() {
+    const [dimensions, setDimensions] = useState({ width: 1200, height: 800 })
+
+    useEffect(() => {
+      if (typeof window !== "undefined") {
+        setDimensions({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        })
+      }
+    }, [])
   return (
     <section className="relative min-h-screen bg-white py-20 px-6 md:px-12 lg:px-20 overflow-hidden">
       {/* Animated background elements */}
