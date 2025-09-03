@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Shield, Users, Headphones, Globe2, TrendingUp } from "lucide-react"
-import { useEffect, useState } from "react"
 
 const features = [
   {
@@ -43,97 +42,8 @@ const features = [
 ]
 
 export default function WhyChooseUs() {
-    const [dimensions, setDimensions] = useState({ width: 1200, height: 800 })
-
-    useEffect(() => {
-      if (typeof window !== "undefined") {
-        setDimensions({
-          width: window.innerWidth,
-          height: window.innerHeight,
-        })
-      }
-    }, [])
   return (
     <section className="relative min-h-screen bg-white py-20 px-6 md:px-12 lg:px-20 overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.3, rotate: 0 }}
-          animate={{ 
-            opacity: [0.1, 0.3, 0.1], 
-            scale: [0.3, 1.2, 0.3], 
-            rotate: [0, 180, 360] 
-          }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-          className="absolute top-20 left-20 w-96 h-96 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-600/10 blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
-          animate={{ 
-            opacity: [0.1, 0.25, 0.1], 
-            scale: [0.5, 1.5, 0.5], 
-            rotate: [0, -180, -360] 
-          }}
-          transition={{ 
-            duration: 10, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute bottom-20 right-20 w-80 h-80 rounded-full bg-gradient-to-l from-orange-500/10 to-pink-500/10 blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.4 }}
-          animate={{ 
-            opacity: [0.05, 0.2, 0.05], 
-            scale: [0.4, 1, 0.4] 
-          }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 4
-          }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-r from-cyan-400/8 to-teal-500/8 blur-2xl"
-        />
-      </div>
-
-      {/* Floating particles */}
-      {Array.from({ length: 15 }).map((_, i) => (
-        <motion.div
-          key={i}
-          initial={{ 
-            opacity: 0, 
-            y: Math.random() * window.innerHeight || 800,
-            x: Math.random() * window.innerWidth || 1200 
-          }}
-          animate={{ 
-            opacity: [0, 0.6, 0],
-            y: [
-              Math.random() * (window.innerHeight || 800),
-              Math.random() * (window.innerHeight || 800) - 200,
-              Math.random() * (window.innerHeight || 800)
-            ],
-            x: [
-              Math.random() * (window.innerWidth || 1200),
-              Math.random() * (window.innerWidth || 1200),
-              Math.random() * (window.innerWidth || 1200)
-            ]
-          }}
-          transition={{ 
-            duration: Math.random() * 8 + 5, 
-            repeat: Infinity,
-            ease: "linear",
-            delay: Math.random() * 3
-          }}
-          className="absolute w-1 h-1 bg-gray-400/30 rounded-full"
-        />
-      ))}
-
       <div className="relative z-20 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -195,9 +105,7 @@ export default function WhyChooseUs() {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                {/* Card Background with Glassmorphism */}
                 <div className="relative backdrop-blur-xl bg-gray-50/80 border border-gray-200/50 rounded-3xl p-8 h-full overflow-hidden shadow-lg">
-                  {/* Gradient overlay on hover */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
@@ -205,7 +113,6 @@ export default function WhyChooseUs() {
                     className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-10 rounded-3xl`}
                   />
                   
-                  {/* Icon with gradient background */}
                   <div className="relative z-10 mb-6">
                     <motion.div
                       whileHover={{ 
@@ -221,7 +128,6 @@ export default function WhyChooseUs() {
                     </motion.div>
                   </div>
 
-                  {/* Content */}
                   <div className="relative z-10">
                     <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-blue-600 group-hover:bg-clip-text transition-all duration-300">
                       {feature.title}
@@ -231,7 +137,6 @@ export default function WhyChooseUs() {
                     </p>
                   </div>
 
-                  {/* Subtle border glow effect */}
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 1 }}
