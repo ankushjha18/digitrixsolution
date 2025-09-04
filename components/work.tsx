@@ -5,20 +5,20 @@ import { useRef } from "react"
 
 const steps = [
   {
-    title: "Chatbot Assistance",
-    description: "Start a chat with our 24/7 chatbot to immediately connect with a project manager.",
+    title: "Discover & Strategize",
+    description: "We begin by diving deep into your vision, audience, and market landscape. This phase is about building the blueprint,defining your brand's core message, competitive positioning, and strategic goals. You receive a clear, actionable brand strategy roadmap.",
   },
   {
-    title: "Ticket Creation",
-    description: "Once we understand your requirements, we create a ticket assigned to the right expert.",
+    title: "Design & Differentiate",
+    description: "Here, strategy becomes tangible. Our creative team crafts a unique visual identity that resonates emotionally and sets you apart. We design every touchpoint—from logo and palette to website UX and brand guidelines—to tell a compelling story.",
   },
   {
-    title: "Expert Resolution",
-    description: "Our team works swiftly to fix issues, providing updates at every step until resolved.",
+    title: "Develop & Amplify",
+    description: "With designs approved, our developers and marketers bring the brand to life. We build robust, scalable digital platforms while simultaneously crafting and launching targeted marketing campaigns to generate buzz and attract your first customers.",
   },
   {
-    title: "Ongoing Support",
-    description: "After resolution, we provide ongoing support & maintenance for smooth operations.",
+    title: "Deploy & Grow",
+    description: "We manage your brand's market launch with precision. But our partnership continues beyond launch day. We provide ongoing analysis, support, and iterative marketing strategies to ensure sustained growth and market relevance.",
   },
 ]
 
@@ -41,7 +41,7 @@ export default function SupportTimeline() {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold">
-            How Our <span className="text-blue-600">Support System</span> Works
+            How We <span className="text-blue-600">Build Brand</span> .
           </h2>
           <p className="text-lg text-gray-500">
             Simplifying Work with Easy and Reliable Support System
