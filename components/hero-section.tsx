@@ -38,7 +38,7 @@ export function HeroSection() {
             <div className="flex items-center justify-center mb-6">
               <Sparkles className="h-8 w-8 text-primary mr-3 animate-pulse" />
               <span className="text-primary font-semibold text-lg">
-                Premium Digital Solutions
+                DESIGN. DEVELOP. DELIVER. 
               </span>
               <Sparkles className="h-8 w-8 text-primary ml-3 animate-pulse" />
             </div>
@@ -64,9 +64,8 @@ export function HeroSection() {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            We craft stunning websites and powerful digital marketing strategies
-            that drive growth, engage audiences, and deliver measurable results
-            for your business.
+            Tired of a digital presence that doesn't deliver? We partner with you to create high-performance
+             websites and targeted strategies that attract your ideal customers and drive measurable growth.
           </p>
 
           <div

@@ -8,25 +8,52 @@ import Reveal from "./anim/Reveal"
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "A modern e-commerce solution with advanced features and seamless user experience.",
-    image: "/modern-ecommerce-interface.png",
-    tags: ["Next.js", "Stripe", "Tailwind CSS", "PostgreSQL"],
+    title: "Education Platform",
+    description: "A modern education solution with advanced features and seamless user experience.",
+    image: "/education.png",
+    tags: ["Wordpress", "Html", "css", "UI/UX Design"],
     category: "Web Development",
+    link: "https://codedgeacademy.com/",
   },
   {
-    title: "SaaS Marketing Campaign",
-    description: "Comprehensive digital marketing strategy that increased conversions by 300%.",
-    image: "/digital-marketing-dashboard.png",
-    tags: ["Google Ads", "SEO", "Content Marketing", "Analytics"],
-    category: "Digital Marketing",
+    title: "Education Consultancy ",
+    description: "Comprehensive website development and digital marketing strategy that increased conversions by 300%.",
+    image: "/enagehub.png",
+    tags: [ "Web Development", "SEO", "Content Marketing","Google Ads"],
+    category: "Web Development",
+    link: "https://engage-hub-one.vercel.app/"
   },
   {
-    title: "Mobile Banking App",
-    description: "Secure and intuitive mobile banking application with biometric authentication.",
-    image: "/mobile-banking-app.png",
-    tags: ["React Native", "Node.js", "MongoDB", "Security"],
-    category: "Mobile Development",
+    title: "Personal Portfolio",
+    description: "Modern and responsive portfolio website designed to highlight work in web development and design .",
+    image: "/portfolio.png",
+    tags: ["React Native", "Node.js", "Responsive", "Modern"],
+    category: "portfolio",
+    link: "https://workforayush-portfolio.netlify.app/?fbclid=PAdGRzdgMmrNJleHRuA2FlbQIxMQABp_EBzts8vQrk1p1JeXPYBiNaBKW3cWiFQKXp68JRBeGoPR0_G4XekshIIepF_aem_AoefxL-ha8CLxTs7n1oeZg"
+  },
+  {
+    title: "MICE Website",
+    description: "Unleashing the power of teamwork through creative, high-energy activities. We design experiences that connect, motivate, and transform groups into winning teams.",
+    image: "/miceteam.png",
+    tags: ["Html", "Node.js", "Responsive", "Modern"],
+    category: "MICE",
+    link: "https://teambuilding.miceemporio.com/"
+  },
+  {
+    title: "MICE Website",
+    description: "Dynamic event company platform highlighting immersive team-building activities and corporate experiences that spark collaboration, motivation, and lasting connections.",
+    image: "/micemain.png",
+    tags: ["Html5", "css", "js","Responsive", "Modern"],
+    category: "MICE Event Comapany",
+    link: "https://miceemporio.com/"
+  },
+  {
+    title: "Service Website",
+    description: "24/7 expert website support platform offering quick fixes, maintenance, and optimization services to keep websites running smoothly and securely.",
+    image: "/fastflix.png",
+    tags: ["Wordpress", "css", "js","Responsive", "Html5", "Modern"],
+    category: "Web Development",
+    link: "https://fastfiks.com/"
   },
   
 ]
@@ -71,13 +98,18 @@ export function PortfolioSection() {
                         ))}
                       </div>
                       <div className="flex gap-2">
-                        <Button size="sm" variant="outline" className="flex-1 text-white bg-[#723fa3] hover:bg-[#ff914d]" >
+                      <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1"
+                        >
+                        <Button size="sm" variant="outline" className="flex-1 w-full  justify-center text-white bg-[#723fa3] hover:bg-[#ff914d]" >
                           <ExternalLink className="h-4 w-4 mr-2" />
                           View Live
                         </Button>
-                        <Button size="sm" variant="ghost">
-                          <Github className="h-4 w-4" />
-                        </Button>
+
+                        </a>
                       </div>
                     </CardContent>
                   </Card>
@@ -109,9 +141,6 @@ export function PortfolioSection() {
                 </Button>
               </a>
            </div>
-
-
-
 
       </Reveal>
     </section>
