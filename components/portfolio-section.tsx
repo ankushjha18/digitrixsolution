@@ -11,7 +11,7 @@ const projects = [
     title: "Education Platform",
     description: "A modern education solution with advanced features and seamless user experience.",
     image: "/education.png",
-    tags: ["Wordpress", "Html", "css", "UI/UX Design"],
+    tags: ["Wordpress", "Html", "Css", "UI/UX Design"],
     category: "Web Development",
     link: "https://codedgeacademy.com/",
   },
@@ -19,7 +19,7 @@ const projects = [
     title: "Education Consultancy ",
     description: "Comprehensive website development and digital marketing strategy that increased conversions by 300%.",
     image: "/enagehub.png",
-    tags: [ "Web Development", "SEO", "Content Marketing","Google Ads"],
+    tags: [ "Web Development", "SEO","Google Ads","React","Tailwind"],
     category: "Web Development",
     link: "https://engage-hub-one.vercel.app/"
   },
@@ -51,7 +51,7 @@ const projects = [
     title: "Service Website",
     description: "24/7 expert website support platform offering quick fixes, maintenance, and optimization services to keep websites running smoothly and securely.",
     image: "/fastflix.png",
-    tags: ["Wordpress", "css", "js","Responsive", "Html5", "Modern"],
+    tags: ["React", "Tailwind css", "Node.js","Responsive", "Modern"],
     category: "Web Development",
     link: "https://fastfiks.com/"
   },
