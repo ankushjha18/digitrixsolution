@@ -26,7 +26,7 @@ export function Header() {
     { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
     { name: "Portfolio", href: "/portfolio" },
-    { name: "Pricing", href: "/contact" },
+    { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
     
   ]

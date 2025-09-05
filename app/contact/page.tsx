@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import Reveal from "@/components/anim/Reveal";
 
+
 export default function HeroSection() {
   // Explicitly type form ref
   const form = useRef<HTMLFormElement | null>(null);
@@ -97,7 +98,7 @@ export default function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-slate-300 hover:border-orange-400 px-8 py-4 text-lg font-semibold rounded-full bg-transparent hover:bg-orange-500 transition-all duration-300 hover:scale-105 text-black hover:text-white"
+                className="border-2 border-slate-300 hover:border-orange-400 px-8 py-4 text-lg font-semibold rounded-full bg-transparent hover:bg-orange-500 transition-all duration-300 hover:scale-105 text-white hover:text-white"
               >
                 <Phone className="mr-2" size={20} />
                 Schedule a Call
@@ -487,6 +488,8 @@ export default function HeroSection() {
         </div>
        </Reveal>
       </section>
+
+     
 
       {/* =========fotter==============*/}
       <Footer />
