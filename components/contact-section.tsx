@@ -8,7 +8,7 @@ import Reveal from "./anim/Reveal"
 
 export function ConsultancySection() {
   return (
-    <section className="w-full py-12 bg-background">
+    <section  className="w-full py-12 bg-background">
       <Reveal>
       <div className="container mx-auto px-4 sm:px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-6 pl-4 sm:pl-8 md:pl-16">
         

@@ -106,7 +106,7 @@ export default function ProjectSection() {
     : projects.filter(project => project.category === activeFilter)
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-background via-background to-muted/10 py-20 px-4 overflow-hidden relative">
+    <section id="projects" className="min-h-screen bg-gradient-to-br from-background via-background to-muted/10 py-20 px-4 overflow-hidden relative">
       {/* Background Elements (decorative: pointer-events-none so they never block clicks) */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl animate-float-slow" />

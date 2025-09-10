@@ -139,13 +139,17 @@ export default function PortfolioHero() {
             <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
             }`} style={{ transitionDelay: '0.6s' }}>
+              <a href="#projects">
               <button className="group px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-primary/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
                 View My Work
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
+              </a>
+              <a href="/contact#contact-form">
               <button className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105">
                 Get In Touch
               </button>
+              </a>
             </div>
           </div>
 
