@@ -11,7 +11,7 @@ import { VideoStrip } from "@/components/video-strip"
 import Reveal from "@/components/anim/Reveal"
 import SupportTimeline from "@/components/work"
 import WhyChooseUs from "@/components/why_choose_us"
-import { TestimonialsSection } from "@/components/testimonials"
+import  TestimonialsSection  from "@/components/testimonials"
 
 
 export default function Home() {

@@ -8,6 +8,7 @@ import OtherServices from "./OtherServices";
 import { Footer } from "@/components/footer";
 import FAQ from "./faqpricing";
 import FinalCTA from "./finalcta";
+import  TestimonialsSection  from "@/components/testimonials";
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -195,9 +196,13 @@ export default function HeroSection() {
 
     <OtherServices />
 
+    <TestimonialsSection />
+
     <FAQ />
 
     <FinalCTA />
+
+
 
     <Footer />
 

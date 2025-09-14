@@ -45,7 +45,7 @@ export function Header() {
           <img 
              src="/logo_digitrix.png"  // put your logo inside /public/logo.png
               alt="Logo"
-              className="h-35 w-auto transition-transform duration-300 group-hover:scale-110"
+              className="h-21 w-auto transition-transform duration-300 group-hover:scale-110"
            />
         </Link>
 

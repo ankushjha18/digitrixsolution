@@ -168,8 +168,8 @@ export function Footer() {
                 { name: "Blog", icon: BookOpen, href: "/blog" },
                 { name: "Contact", icon: Phone, href: "/contact" },
                 { name: "Privacy Policy", icon: Shield, href: "/privacypolicy" },
-                { name: "Terms & Conditions", icon: FileText, href: "/terms" },
-                { name: "Cookie Policy", icon: Cookie, href: "/cookies" }
+                { name: "Terms & Conditions", icon: FileText, href: "/termsofservices" },
+                { name: "Cookie Policy", icon: Cookie, href: "/cookie" }
               ].map((item, index) => (
                 <li key={item.name} className="group/item">
                   <a 
@@ -256,8 +256,8 @@ export function Footer() {
             <div className="flex gap-8 text-sm">
               {[
                 { name: "Privacy Policy", href: "/privacypolicy" },
-                { name: "Terms of Service", href: "/terms" },
-                { name: "Cookie Policy", href: "/cookies" }
+                { name: "Terms of Service", href: "/termsofservices" },
+                { name: "Cookie Policy", href: "/cookie" }
               ].map((link) => (
                 <a 
                   key={link.name}

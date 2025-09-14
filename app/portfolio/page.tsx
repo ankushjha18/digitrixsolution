@@ -7,7 +7,7 @@ import Reveal from "@/components/anim/Reveal"
 import StatsSection from "./statssection"
 import ProjectSection from "./projectsection"
 import { Footer } from "@/components/footer"
-import { TestimonialsSection } from "@/components/testimonials"
+import  TestimonialsSection  from "@/components/testimonials"
 import CTASection from "./ctasection"
 
 

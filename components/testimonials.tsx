@@ -1,164 +1,271 @@
 "use client"
 
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import Image from "next/image"
-import { Star } from "lucide-react"
-import Reveal from "./anim/Reveal"
+import { useState, useEffect } from "react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Star, Quote, ChevronLeft, ChevronRight, Users } from "lucide-react"
 
 const testimonials = [
   {
     name: "John Doe",
     role: "CEO, ExampleCorp",
-    text: "This company transformed our online presence. Highly professional and reliable!",
-    image: "/images/testimonial_profile.jpg",
-    rating: 4.5,
+    text: "This company transformed our online presence. Their innovative approach and professional execution exceeded all our expectations. The ROI has been phenomenal!",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    company: "ExampleCorp",
+    results: "+300% Revenue Growth"
   },
   {
     name: "Jane Smith",
-    role: "Marketing Head, BrandX",
-    text: "Exceptional service with amazing results. They really understand digital marketing.",
-    image: "/images/testimonial_profile.jpg",
-    rating: 4,
+    role: "Marketing Director, BrandX",
+    text: "Exceptional service with amazing results. They really understand digital marketing and delivered campaigns that converted beyond our wildest dreams.",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    company: "BrandX",
+    results: "+250% Lead Generation"
   },
   {
     name: "Mike Johnson",
     role: "CTO, TechSolutions",
-    text: "Their development team delivered a flawless app. Highly recommended!",
-    image: "/images/testimonial_profile.jpg",
+    text: "Their development team delivered a flawless mobile app that our users absolutely love. The attention to detail and technical expertise is unmatched.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
     rating: 5,
+    company: "TechSolutions",
+    results: "4.9★ App Store Rating"
   },
   {
     name: "Sara Williams",
-    role: "Designer, CreativeHub",
-    text: "Great design sense and attention to detail. Loved working with them.",
-    image: "/images/testimonial_profile.jpg",
-    rating: 4.5,
+    role: "Creative Director, CreativeHub",
+    text: "Great design sense and attention to detail. They brought our vision to life with stunning visuals that perfectly capture our brand essence.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    company: "CreativeHub",
+    results: "+180% Brand Engagement"
   },
   {
     name: "David Brown",
     role: "Founder, StartupZone",
-    text: "Amazing consultancy and support. Our project was delivered on time.",
-    image: "/images/testimonial_profile.jpg",
-    rating: 4,
+    text: "Amazing consultancy and strategic guidance. Our startup went from concept to market leader thanks to their expert insights and execution.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face",
+    rating: 5,
+    company: "StartupZone",
+    results: "$2M Series A Raised"
   },
   {
     name: "Emily Davis",
-    role: "Project Manager, DevCo",
-    text: "Professional and proactive. I highly recommend their services.",
-    image: "/images/testimonial_profile.jpg",
+    role: "VP Operations, DevCo",
+    text: "Professional, proactive, and results-driven. They streamlined our processes and delivered solutions that scaled with our rapid growth.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face",
     rating: 5,
+    company: "DevCo",
+    results: "500% Efficiency Boost"
   },
 ]
 
-export function TestimonialsSection() {
-  return (
-    <section className="w-full py-20 bg-background">
-        <Reveal>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
-          What Our Clients Say
-        </h2>
+export default function TestimonialsSection() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isAutoPlay, setIsAutoPlay] = useState(true)
 
-        <Swiper
-          modules={[Autoplay, Navigation, Pagination]}
-          spaceBetween={30}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
-          pagination={{
-            clickable: true,
-            type: "bullets",
-            el: ".swiper-pagination",
-          }}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className="group relative flex flex-col md:flex-row items-start bg-card rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer">
-                
-                {/* Profile Picture */}
-                <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 rounded-full overflow-hidden mr-4">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    width={80}
-                    height={80}
-                    className="object-cover"
-                  />
-                </div>
+  useEffect(() => {
+    if (!isAutoPlay) return
+    
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % Math.ceil(testimonials.length / 3))
+    }, 5000)
 
-                {/* Details */}
-                <div className="mt-4 md:mt-0 flex-1">
-                  {/* Stars */}
-               {/* Stars */}
-                <div className="flex items-center mb-2 justify-center md:justify-start">
-                {Array.from({ length: 5 }).map((_, i) => {
-                    const fill = Math.min(Math.max(testimonial.rating - i, 0), 1); // 0, 0.5, 1
+    return () => clearInterval(timer)
+  }, [isAutoPlay])
 
-                    return (
-                    <svg
-                        key={i}
-                        viewBox="0 0 24 24"
-                        className="w-5 h-5 mr-1"
-                    >
-                        {/* Gray Star */}
-                        <path
-                        d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.78 1.4 8.162L12 18.896 5.666 23.152l1.4-8.162L1.132 9.21l8.2-1.192z"
-                        fill="#E5E7EB" // gray
-                        />
-                        {/* Yellow overlay star */}
-                        <clipPath id={`clip-${i}`}>
-                        <rect x="0" y="0" width={`${fill * 100}%`} height="100%" />
-                        </clipPath>
-                        <path
-                        d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.78 1.4 8.162L12 18.896 5.666 23.152l1.4-8.162L1.132 9.21l8.2-1.192z"
-                        fill="#FBBF24" // yellow
-                        clipPath={`url(#clip-${i})`}
-                        />
-                    </svg>
-                    )
-                })}
-                </div>
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % Math.ceil(testimonials.length / 3))
+    setIsAutoPlay(false)
+  }
 
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + Math.ceil(testimonials.length / 3)) % Math.ceil(testimonials.length / 3))
+    setIsAutoPlay(false)
+  }
 
-
-                  {/* Testimonial text */}
-                  <p className="text-sm sm:text-base text-muted-foreground mb-2">
-                    "{testimonial.text}"
-                  </p>
-
-                  {/* Name & Role */}
-                  <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                  <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              </div>
-            </SwiperSlide>
-          ))}
-
-          {/* Navigation Buttons */}
-          <div className="swiper-button-prev text-2xl text-primary hover:text-orange-500"></div>
-          <div className="swiper-button-next text-2xl text-primary hover:text-orange-500"></div>
-
-          {/* Pagination Dots */}
-          <div className="swiper-pagination mt-4 text-center"></div>
-        </Swiper>
+  const renderStars = (rating:number) => {
+    return (
+      <div className="flex items-center space-x-0.5">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Star
+            key={i}
+            className={`w-4 h-4 ${
+              i < Math.floor(rating)
+                ? 'text-amber-400 fill-amber-400'
+                : i < rating
+                ? 'text-amber-400 fill-amber-400/50'
+                : 'text-muted-foreground/30'
+            }`}
+          />
+        ))}
       </div>
-      </Reveal>
+    )
+  }
+
+  return (
+    <section className="py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-background via-muted/10 to-background relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-3xl animate-float-slower" />
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-full blur-2xl animate-pulse" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16 animate-float-slow">
+          <Badge variant="outline" className="mb-6 text-primary border-primary/20 px-4 py-2 text-sm font-medium">
+            <Users className="w-4 h-4 mr-2" />
+            Client Testimonials
+          </Badge>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight">
+            What Our Clients Say
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Don't just take our word for it. Here's what industry leaders say about working with us.
+          </p>
+        </div>
+
+        {/* Testimonials Grid */}
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, slideIndex) => (
+                <div key={slideIndex} className="w-full flex-shrink-0">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    {testimonials
+                      .slice(slideIndex * 3, slideIndex * 3 + 3)
+                      .map((testimonial, index) => (
+                        <Card
+                          key={index}
+                          className="group relative overflow-hidden border-0 bg-gradient-to-br from-card via-card/95 to-muted/5 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-700 hover:scale-105 cursor-pointer will-transform"
+                        >
+                          {/* Gradient overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          
+                          {/* Quote icon */}
+                          <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                            <Quote className="w-12 h-12 text-primary" />
+                          </div>
+
+                          <CardContent className="p-6 lg:p-8 relative z-10">
+                            {/* Header with image and basic info */}
+                            <div className="flex items-center mb-6">
+                              <div className="relative">
+                                <div className="w-16 h-16 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                                  <img
+                                    src={testimonial.image}
+                                    alt={testimonial.name}
+                                    className="w-full h-full object-cover rounded-2xl"
+                                  />
+                                </div>
+                                <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+                                  <Star className="w-3 h-3 text-white fill-white" />
+                                </div>
+                              </div>
+                              
+                              <div className="ml-4 flex-1">
+                                <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                                  {testimonial.name}
+                                </h4>
+                                <p className="text-sm text-muted-foreground">
+                                  {testimonial.role}
+                                </p>
+                                <p className="text-xs text-primary font-medium">
+                                  {testimonial.company}
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Stars */}
+                            <div className="mb-4">
+                              {renderStars(testimonial.rating)}
+                            </div>
+
+                            {/* Testimonial text */}
+                            <blockquote className="text-foreground/90 leading-relaxed mb-6 group-hover:text-foreground transition-colors duration-300">
+                              "{testimonial.text}"
+                            </blockquote>
+
+                            {/* Results badge */}
+                            <Badge 
+                              variant="secondary" 
+                              className="bg-gradient-to-r from-primary/10 to-secondary/10 text-primary border-primary/20 font-medium"
+                            >
+                              {testimonial.results}
+                            </Badge>
+                          </CardContent>
+                        </Card>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation buttons */}
+          <div className="flex justify-center items-center mt-12 space-x-4">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={prevSlide}
+              className="group w-12 h-12 rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary/5 transition-all duration-300"
+            >
+              <ChevronLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform duration-300" />
+            </Button>
+
+            {/* Dots indicator */}
+            <div className="flex space-x-2">
+              {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentSlide
+                      ? 'bg-primary w-8'
+                      : 'bg-muted-foreground/30 hover:bg-primary/50'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={nextSlide}
+              className="group w-12 h-12 rounded-full border-2 border-primary/20 hover:border-primary hover:bg-primary/5 transition-all duration-300"
+            >
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform duration-300" />
+            </Button>
+          </div>
+        </div>
+
+        {/* Stats section */}
+        <div className="mt-16 md:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center px-4">
+          {[
+            { number: "200+", label: "Happy Clients" },
+            { number: "500+", label: "Projects Completed" },
+            { number: "98%", label: "Client Satisfaction" },
+            { number: "24/7", label: "Support Available" }
+          ].map((stat, index) => (
+            <div key={index} className="group">
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1 md:mb-2 group-hover:scale-110 transition-transform duration-300">
+                {stat.number}
+              </div>
+              <div className="text-xs md:text-sm text-muted-foreground font-medium">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
